@@ -52,7 +52,7 @@
             <div class="col-xs-12">
                 <div class="caption">
                     <fieldset>
-                    <legend  style="font-size: 18pt"><b>ADMINISTRACIÓN DE USUARIOS</b></legend>
+                    <legend  style="font-size: 18pt"><b>ADMINISTRACIÓN DE INVENTARIO</b></legend>
                     <div class="well">
                         
                            <div class="row">
@@ -97,7 +97,7 @@
 											echo "<td>$arreglo[10]</td>";
 											echo "<td>$arreglo[11]</td>";
 											echo "<td>$arreglo[12]</td>";
-                                            echo "<td><a href='#?id=$arreglo[0]'><img src='images/actualizar.gif' class='img-rounded'></a></td>";
+                                            echo "<td><a href='#?id=$arreglo[0]'><img src='images/actualizar.png' class='img-rounded'></a></td>";
                                             echo "<td><a href='index2.php?id=$arreglo[0]&idborrar=2'><img src='images/eliminar.png' class='img-rounded'/></a></td>";
                                             echo "</tr>";
                                             }
@@ -110,10 +110,8 @@
                                             echo "<script>location.href='index2.php'</script>";
                                             }
                                        ?>
-                                    
                                </div>
                            </div>
-                       
                    </div>
                  </fieldset>
                </div>

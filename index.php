@@ -28,11 +28,10 @@
                     <div class="recordar">¿Olvido su contraseña?</div>
                 <input type="checkbox" class="checkbox_most_ctr"><span>Mostrar Contraseña</span><br>
                 <input type="checkbox" class="checkbox_rec_dat"><span>Recordar mis Datos</span>
-                <button type="submit" class="btn_inc_ses">Iniciar sesion</button><a href="/administrador.html"></a>
+                <button type="submit" class="btn_inc_ses">Iniciar sesion</button>
             </form>
         </div>
     </div>
-   
 </body>
 </html>
 

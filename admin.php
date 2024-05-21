@@ -46,10 +46,8 @@ if (@!$_SESSION['user']) {
                     <fieldset>
                     <legend  style="font-size: 18pt"><b>ADMINISTRACIÓN DE USUARIOS</b></legend>
                     <div class="well">
-                        
                            <div class="row">
                                <div class="col-xs-12">
-                                 
                                    <?php
                                         require("connect_db.php");
                                             $sql = "SELECT * FROM login";
@@ -75,7 +73,7 @@ if (@!$_SESSION['user']) {
                                             echo "<td>$arreglo[3]</td>";
                                             echo "<td>$arreglo[4]</td>";
                                             echo "<td>$arreglo[5]</td>";
-                                            echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='images/actualizar.gif' class='img-rounded'></a></td>";
+                                            echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='images/actualizar.png' class='img-rounded'></a></td>";
                                             echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><img src='images/eliminar.png' class='img-rounded'/></a></td>";
                                             echo "</tr>";
                                             }
@@ -88,10 +86,8 @@ if (@!$_SESSION['user']) {
                                             echo "<script>location.href='admin.php'</script>";
                                             }
                                        ?>
-                                    
                                </div>
                            </div>
-                       
                    </div>
                  </fieldset>
                </div>
@@ -103,10 +99,8 @@ if (@!$_SESSION['user']) {
     <footer class="footer">
         <!-- Contenido del footer si es necesario -->
     </footer>
-
     <!-- JavaScript al final para mejorar la velocidad de carga -->
     <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>
