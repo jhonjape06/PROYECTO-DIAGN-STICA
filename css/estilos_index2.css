@@ -177,6 +177,14 @@ legend {
 .table tr:hover {
     background-color: #f2f2f2;
 }
+/* Estilos para estado de stock */
+.nivel-bajo {
+    background-color: #ffcccc; /* Rojo claro */
+}
+
+.normal {
+    background-color: #ccffcc; /* Verde claro */
+}
 
 /* Media queries para diseño responsive */
 @media (max-width: 768px) {
@@ -197,4 +205,5 @@ legend {
     .table th, .table td {
         font-size: 14px;
     }
+   
 }

@@ -3,7 +3,7 @@
     session_start();
     // Redirección si no hay usuario autenticado
     if (!isset($_SESSION['user'])) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit(); // Finaliza el script para evitar ejecución adicional
     }
 ?>
@@ -13,20 +13,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO DIAGNOSTICA</title>
-    <link rel="stylesheet" href="css/estilos_crear_usuario.css">
+    <link rel="stylesheet" href="../css/estilos_crear_usuario.css">
 </head>
 <body>
     <div class="container">
         <!-- Navbar -->
         <nav class="navbar">
-            <img class="logo-adm" src="images/logo-adm.png" alt="logo">
+            <img class="logo-adm" src="../images/logo-adm.png" alt="logo">
             <ul class="nav pull-right">
                 <li>
-                    <form method="post" action="desconectar.php">
-                        <button type="submit" class="cerrar_sesion">Cerrar sesión</button>
+                    <form method="post" action="../desconectar.php">
+                        <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                     </form>
                 </li>
-                <li class="Usuario">Usuario: <strong><?php echo $_SESSION['user']; ?></strong></li>
+                <li class="Usuario">USUARIO: <strong><?php echo $_SESSION['user']; ?></strong></li>
             </ul>
         </nav>
         <!-- Fin Navbar -->
@@ -70,8 +70,8 @@
         <!-- Fin Cuerpo del documento -->
     </div>
     <!-- JavaScript al final para mejorar la velocidad de carga -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/jquery-1.8.3.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script>
         // Función para validar el formulario de registro
         function validarFormulario() {

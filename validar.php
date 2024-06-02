@@ -21,7 +21,7 @@ session_start();
 			$_SESSION['rol']=$f2['rol'];
 
 			echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
-			echo "<script>location.href='admin.php'</script>";
+			echo "<script>location.href='usu_admin/admin.php'</script>";
 		
 		}
 	}
@@ -34,7 +34,7 @@ session_start();
 			$_SESSION['user']=$f['user'];
 			$_SESSION['rol']=$f['rol'];
 
-			header("Location: index2.php");
+			header("Location:usu_logistica/index2.php");
 		}else{
 			echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
 		

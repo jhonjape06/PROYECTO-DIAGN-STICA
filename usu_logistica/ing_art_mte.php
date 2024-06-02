@@ -2,10 +2,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header("Location:index.php");
+    header("Location:../index.php");
     exit();
 } elseif ($_SESSION['rol'] == 1) {
-    header("Location:admin.php");
+    header("Location:../usu_admin/admin.php");
     exit();
 }
 ?>
@@ -14,7 +14,7 @@ if (!isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO DIAGNOSTICA</title>
-    <link rel="stylesheet" href="css/estilos_ing_art_mte.css" />
+    <link rel="stylesheet" href="../css/estilos_ing_art_mte.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -45,6 +45,11 @@ if (!isset($_SESSION['user'])) {
                     });
                 }
             });
+
+            // Convertir a mayúsculas al momento de entrada
+            $('input[type="text"]').on('input', function() {
+                this.value = this.value.toUpperCase();
+            });
         });
     </script>
 </head>
@@ -52,14 +57,14 @@ if (!isset($_SESSION['user'])) {
     <div class="container">
         <!-- Navbar -->
         <nav class="navbar">
-            <img class="logo-adm" src="images/logo-adm.png" alt="logo">
+            <img class="logo-adm" src="../images/logo-adm.png" alt="logo">
             <ul class="nav pull-right">
                 <li>
-                    <form method="post" action="desconectar.php">
-                        <button type="submit" class="cerrar_sesion">Cerrar sesión</button>
+                    <form method="post" action="../desconectar.php">
+                        <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                     </form>
                 </li>
-                <li class="Usuario">Usuario: <strong><?php echo htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                <li class="Usuario">USUARIO: <strong><?php echo htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
             </ul>
         </nav>
         <!-- Fin Navbar -->
@@ -107,8 +112,8 @@ if (!isset($_SESSION['user'])) {
         <!-- Fin Cuerpo del documento -->
     </div>
     <!-- JavaScript al final para mejorar la velocidad de carga -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/jquery-1.8.3.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script>
         // Función para validar el formulario de registro
         function validarFormulario() {

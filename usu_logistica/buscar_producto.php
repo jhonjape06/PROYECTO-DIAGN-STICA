@@ -1,5 +1,5 @@
 <?php
-require("connect_db.php");
+require("../connect_db.php");
 
 if (isset($_POST['codigo_producto'])) {
     $codigo_producto = mysqli_real_escape_string($mysqli, $_POST['codigo_producto']);

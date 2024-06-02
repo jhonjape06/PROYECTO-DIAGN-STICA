@@ -98,6 +98,8 @@ label {
     color: black;
 }
 
+.articulo_descontinuado,
+input[type="date"],
 input[type="text"],
 input[type="password"] {
     width: 100%;

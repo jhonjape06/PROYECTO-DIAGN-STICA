@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-
-	<?php
-	session_start();
-	if (@!$_SESSION['user']) {
-		header("Location:index.php");
-	}elseif ($_SESSION['rol']==1) {
-		header("Location:admin.php");
-	}
-	?>
-
+<?php
+session_start();
+if (@!$_SESSION['user']) {
+    header("<Location:usu_admin>index.php");
+} elseif ($_SESSION['rol'] == 2) {
+    header("Location:../index2.php");
+}
+?>
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO DIAGNOSTICA</title>
-    <link rel="stylesheet" href="css/estilos_index2.css" />
+    <link rel="stylesheet" href="../css/estilos_adm.css" />
 </head>
 
 <body>
     <div class="container">
         <!-- Navbar -->
         <nav class="navbar">
-                <img class="logo-adm"src="images/logo-adm.png" alt="logo">
+                <img class="logo-adm"src="../images/logo-adm.png" alt="logo">
             <ul class="nav pull-right">
                 <li>
-                    <form method="post" action="desconectar.php">
+                    <form method="post" action="../desconectar.php">
                         <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                     </form>
                 </li>
@@ -36,48 +34,33 @@
         <!-- Cuerpo del documento -->
         <div class="row">
             <div class="container_btn">
-                <form method="post" action="ingresar_articulos.php">
-                    <button type="submit" class="btn_ing_art">INGRESAR ARTICULO</button>
+                <form method="post" action="crear_usuario.php">
+                    <button type="submit" class="btn_crear_usu">CREAR USUARIO</button>
                 </form> 
                 <form method="post" action="#">
-                    <button type="submit" class="btn_ped_sed">PEDIDO DE SEDES</button>
-                </form> 
-				<form method="post" action="#">
-                    <button type="submit" class="btn_proveedores">PROVEEDORES</button>
-                </form> 
-				<form method="post" action="#">
-                    <button type="submit" class="btn_gen_rep">GENERAR REPORTES</button>
+                    <button type="submit" class="btn_reportes_adm">REPORTES</button>
                 </form> 
             </div>
             <div class="col-xs-12">
                 <div class="caption">
                     <fieldset>
-                    <legend  style="font-size: 18pt"><b>ADMINISTRACIÓN DE INVENTARIO</b></legend>
+                    <legend  style="font-size: 18pt"><b>ADMINISTRACIÓN DE USUARIOS</b></legend>
                     <div class="well">
-                        
                            <div class="row">
                                <div class="col-xs-12">
-                                 
                                    <?php
-                                        require("connect_db.php");
-                                            $sql = "SELECT * FROM inventario";
+                                        require("../connect_db.php");
+                                            $sql = "SELECT * FROM login";
                                             $query = mysqli_query($mysqli, $sql);
 
                                             echo "<table class='table table-hover'>";
                                             echo "<tr class='warning'>";
                                             echo "<td>Id</td>";
-                                            echo "<td>ESTADO DE STOCK</td>";
-                                            echo "<td>CODIGO ARTICULO</td>";
-                                            echo "<td>NOMBRE</td>";
-                                            echo "<td>PROVEEDOR</td>";
-                                            echo "<td>DESCRIPCCION</td>";
-											echo "<td>VALOR POR ARTICULO</td>";
-											echo "<td>CANTIDAD EN STOCK</td>";
-											echo "<td>VALOR TOTAL</td>";
-											echo "<td>CANTIDAD STOCK MINIMO</td>";
-											echo "<td>DIAS DE PEDIDO</td>";
-											echo "<td>CANTIDAD NUEVO PEDIDO</td>";
-											echo "<td>ARTICULO DESCONTINUADO</td>";
+                                            echo "<td>Usuario</td>";
+                                            echo "<td>Password</td>";
+                                            echo "<td>Correo</td>";
+                                            echo "<td>Password del administrador</td>";
+                                            echo "<td>rol del usuario</td>";
                                             echo "<td>Editar</td>";
                                             echo "<td>Borrar</td>";
                                             echo "</tr>";
@@ -90,24 +73,17 @@
                                             echo "<td>$arreglo[3]</td>";
                                             echo "<td>$arreglo[4]</td>";
                                             echo "<td>$arreglo[5]</td>";
-											echo "<td>$arreglo[6]</td>";
-											echo "<td>$arreglo[7]</td>";
-											echo "<td>$arreglo[8]</td>";
-											echo "<td>$arreglo[9]</td>";
-											echo "<td>$arreglo[10]</td>";
-											echo "<td>$arreglo[11]</td>";
-											echo "<td>$arreglo[12]</td>";
-                                            echo "<td><a href='#?id=$arreglo[0]'><img src='images/actualizar.png' class='img-rounded'></a></td>";
-                                            echo "<td><a href='index2.php?id=$arreglo[0]&idborrar=2'><img src='images/eliminar.png' class='img-rounded'/></a></td>";
+                                            echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='../images/actualizar.png' class='img-rounded'></a></td>";
+                                            echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><img src='../images/eliminar.png' class='img-rounded'/></a></td>";
                                             echo "</tr>";
                                             }
                                             echo "</table>";
                                             extract($_GET);
                                             if (@$idborrar == 2) {
-                                            $sqlborrar = "DELETE FROM inventario WHERE id=$id";
+                                            $sqlborrar = "DELETE FROM login WHERE id=$id";
                                             $resborrar = mysqli_query($mysqli, $sqlborrar);
                                             echo '<script>alert("REGISTRO ELIMINADO")</script> ';
-                                            echo "<script>location.href='index2.php'</script>";
+                                            echo "<script>location.href='admin.php'</script>";
                                             }
                                        ?>
                                </div>
@@ -123,10 +99,8 @@
     <footer class="footer">
         <!-- Contenido del footer si es necesario -->
     </footer>
-
     <!-- JavaScript al final para mejorar la velocidad de carga -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/jquery-1.8.3.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
-
 </html>
