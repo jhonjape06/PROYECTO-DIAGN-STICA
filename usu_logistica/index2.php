@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_assoc($query)) {
                 <form method="post" action="#">
                     <button type="submit" class="btn_ped_sed">PEDIDO DE SEDES</button>
                 </form> 
-                <form method="post" action="#">
+                <form method="post" action="proveedores/proveedores.php">
                     <button type="submit" class="btn_proveedores">PROVEEDORES</button>
                 </form> 
                 <form method="post" action="#">

@@ -23,25 +23,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `login`
+-- Estructura de tabla para la tabla `inventario`
 --
 
-CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
-  `user` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `pasadmin` varchar(250) NOT NULL,
-  `rol` int(3) NOT NULL
+CREATE TABLE `inventario` (
+  `id` INT(11) NOT NULL,
+  `estado_stock` VARCHAR(250) NOT NULL,
+  `codigo_art` VARCHAR(250) NOT NULL,
+  `nombre_art` VARCHAR(250) NOT NULL,
+  `proveedor` VARCHAR(250) NOT NULL,
+  `descrip` VARCHAR(250) NOT NULL,
+  `valor_art` VARCHAR(250) NOT NULL,
+  `cantidad` INT(250) NOT NULL,
+  `valor_total` VARCHAR(250) NOT NULL,
+  `cantidad_stock_minimo` VARCHAR(100) NOT NULL,
+  `dias_pedido` DATE(100) NOT NULL,
+  `cantidad_nvo_ped` VARCHAR(100) NOT NULL,
+  `articulo_descontinuado` VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `login`
+-- Volcado de datos para la tabla `inventario`
 --
 
-INSERT INTO `login` (`id`, `user`, `password`, `email`, `pasadmin`, `rol`) VALUES
-(1, 'Administrador', '', 'admin@gmail.com', '123456', 1),
-(2, 'jhon peñaranda', '12345', 'jhonjape069@gmail.com', '', 2);
+INSERT INTO `inventario` (`id`, `estado_stock`, `codigo_art`, `nombre_art`, `proveedor`, `descrip`, `valor_art`, `cantidad`, `valor_total`, `cantidad_stock_minimo`, `dias_pedido`, `cantidad_nvo_ped`, `articulo_descontinuado`) VALUES
+(1, '', '900271266', 'papeles', 'dispapeles', 'papeles doble hoja', '20000' ,'12', '', '5', '', '10', ''),
+(2, '', '587499680', 'libros', 'dispapeles', 'libros grandes', '30000' ,'10', '', '4', '', '10', '');
 
 
 --
@@ -49,9 +56,9 @@ INSERT INTO `login` (`id`, `user`, `password`, `email`, `pasadmin`, `rol`) VALUE
 --
 
 --
--- Indices de la tabla `login`
+-- Indices de la tabla `inventario`
 --
-ALTER TABLE `login`
+ALTER TABLE `inventario`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -59,9 +66,9 @@ ALTER TABLE `login`
 --
 
 --
--- AUTO_INCREMENT de la tabla `login`
+-- AUTO_INCREMENT de la tabla `proveedores`
 --
-ALTER TABLE `login`
+ALTER TABLE `inventario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
