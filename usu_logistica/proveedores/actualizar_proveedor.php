@@ -57,7 +57,7 @@ if (@!$_SESSION['user']) {
 							<br>
 				            EMPRESA<br> <input type="text" name="empresa" value="<?php echo $empresa?>"><br>
 							<br>
-				            CONTACTO<br> <input type="text" name="contacto" value="<?php echo $contacto?>"><br>
+				            NOMBRE DE CONTACTO<br> <input type="text" name="contacto" value="<?php echo $contacto?>"><br>
 							<br>
 				            TELEFONO<br> <input type="text" name="telefono" value="<?php echo $telefono?>"><br>
 							<br>

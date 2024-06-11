@@ -16,6 +16,7 @@ if (!isset($_SESSION['user'])) {
     <title>PROYECTO DIAGNOSTICA</title>
     <link rel="stylesheet" href="../css/estilos_ing_art_mte.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascrip.js"></script>
     <script>
         $(document).ready(function() {
             $('#codigo_art').on('change', function() {
@@ -89,7 +90,9 @@ if (!isset($_SESSION['user'])) {
                         </div>
                         <div class="form-group">
                             <label><b>PROVEEDOR</b></label>
-                            <input type="text" id="proveedor" name="proveedor" class="form-control" required placeholder="Proveedor" />
+                            <select id="proveedor"  name="proveedor" class="form-control" required>
+                                <option value="">Selecciona un proveedor</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label><b>DESCRIPCIÓN</b></label>

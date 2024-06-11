@@ -14,6 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO DIAGNOSTICA</title>
     <link rel="stylesheet" href="../../css/estilos_crear_proveedor.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Convertir a mayúsculas al momento de entrada
+            $('input[type="text"]').on('input', function() {
+                this.value = this.value.toUpperCase();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -50,7 +59,7 @@
                             <input type="text" name="empresa" class="form-control" required placeholder="razón social"/>
                         </div>
                         <div class="form-group">
-                            <label><b>CONTACTO</b></label>
+                            <label><b>NOMBRE DE CONTACTO</b></label>
                             <input type="text" name="contacto" class="form-control" placeholder="Contacto" />
                         </div>
                         <div class="form-group">

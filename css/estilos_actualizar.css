@@ -98,7 +98,7 @@ label {
     color: black;
 }
 
-.articulo_descontinuado,
+select,
 input[type="date"],
 input[type="text"],
 input[type="password"] {

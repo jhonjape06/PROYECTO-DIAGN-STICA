@@ -38,23 +38,6 @@ if ($check_art_count > 0) {
         $nueva_cantidad = $row['cantidad'] + $cantidad;
         $nuevo_valor_total = $nueva_cantidad * $valor_art;
 
-        // Verificar si el artículo debe eliminarse
-        if ($nueva_cantidad <= 0 && strtolower($articulo_descontinuado) === "si") {
-            $delete_query = "DELETE FROM inventario WHERE id='{$row['id']}'";
-            $delete_result = mysqli_query($mysqli, $delete_query);
-
-            if ($delete_result) {
-                echo '<script language="javascript">alert("Artículo eliminado automáticamente debido a la cantidad en stock igual a 0.");</script>';
-                echo "<script>location.href='ing_art_mte.php'</script>";
-                exit();
-            } else {
-                $error_message = mysqli_error($mysqli);
-                echo '<script language="javascript">alert("Error al eliminar el artículo: ' . $error_message . '. Inténtelo de nuevo.");</script>';
-                echo "<script>location.href='ingresar_articulos.php'</script>";
-                exit();
-            }
-        }
-
         if ($nueva_cantidad > 0) {
             $update_query = "UPDATE inventario SET cantidad='$nueva_cantidad', valor_total='$nuevo_valor_total' WHERE id='{$row['id']}'";
             $update_result = mysqli_query($mysqli, $update_query);
