@@ -4,13 +4,11 @@
 
 //$miconexion = new connect_db;
 
-
 session_start();
 	require("connect_db.php");
 
 	$username=$_POST['mail'];
 	$pass=$_POST['pass'];
-
 
 	//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
 	$sql2=mysqli_query($mysqli,"SELECT * FROM login WHERE email='$username'");
@@ -25,7 +23,6 @@ session_start();
 		
 		}
 	}
-
 
 	$sql=mysqli_query($mysqli,"SELECT * FROM login WHERE email='$username'");
 	if($f=mysqli_fetch_assoc($sql)){
@@ -42,7 +39,7 @@ session_start();
 		}
 	}else{
 		
-		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
+		echo '<script>alert("ESTE USUARIO NO EXISTE, POR FAVOR COMUNÍQUESE CON EL ADMINISTRADOR DEL SISTEMA")</script> ';
 		
 		echo "<script>location.href='index.php'</script>";	
 

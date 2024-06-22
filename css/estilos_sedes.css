@@ -1,0 +1,211 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFACB;
+}
+
+.container {
+    background-color: #FFFACB;
+    padding: 20px;
+}
+
+.navbar {
+    background-color:transparent;
+    padding: 20px;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.navbar ul li {
+    margin-left: 10px;
+}
+.logo-adm{
+    position:absolute; 
+    width: 400px;
+
+}
+
+.cerrar_sesion{
+    background-color: #D9D9D9;
+    margin: 0px 0px 30px 90px; 
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
+    position: relative;
+}
+.Usuario {
+    color: black;
+    font-size: 22px;
+}
+
+.row {
+    background-color:transparent;
+    margin-bottom: 20px;
+}
+
+.row-crear-usu{
+    background-color: #afdfee;   
+}
+
+.row-fluid{
+    background-color: #afdfee;
+}
+.well {
+    background-color: #afdfee;
+    padding: 20px;
+    border-radius: 20px;
+}
+.container_btn {
+    display: flex;
+}
+
+.btn_crear_sede,
+.btn_atras {
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
+}
+.btn_ing_art {
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
+}
+.btn_ped_sed {
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;   
+}
+.btn_proveedores {
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;   
+}
+.btn_gen_rep {
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;   
+}
+fieldset {
+    background-color: #afdfee;
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+legend {
+    background-color: #afdfee;
+    font-size: 20px;
+    color: black;
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+
+.table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.table tr:hover {
+    background-color: #f2f2f2;
+}
+/* Estilos para estado de stock */
+.nivel-bajo {
+    background-color: #ffcccc; /* Rojo claro */
+}
+
+.normal {
+    background-color: #ccffcc; /* Verde claro */
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .cerrar_sesion {
+        margin-top: 10px;
+        margin: 140px 0px 30px 90px;  
+    }
+    .Usuario {
+        margin-top: 10px;
+        margin: 0px 0px 30px 90px;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+    }
+   
+}
