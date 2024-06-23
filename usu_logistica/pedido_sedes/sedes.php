@@ -40,7 +40,7 @@ if (!isset($_SESSION['user'])) {
                 <form method="post" action="pedido_sedes.php">
                     <button type="submit" class="btn_atras"><= ATRAS</button>
                 </form>
-                <form method="post" action="#">
+                <form method="post" action="crear_sede.php">
                     <button type="submit" class="btn_crear_sede">CREAR SEDE</button>
                 </form>
             </div>
@@ -81,8 +81,8 @@ if (!isset($_SESSION['user'])) {
                                         echo "<td>$arreglo[4]</td>";
                                         echo "<td>$arreglo[5]</td>";
                                         echo "<td>$arreglo[6]</td>";
-                                        echo "<td><a href='actualizar_productos.php?id=$arreglo[0]'><img src='../../images/actualizar.png' class='img-rounded'></a></td>";
-                                        echo "<td><a href='index2.php?id=$arreglo[0]&idborrar=2'><img src='../../images/eliminar.png' class='img-rounded'/></a></td>";
+                                        echo "<td><a href='actualizar_sedes.php?id=$arreglo[0]'><img src='../../images/actualizar.png' class='img-rounded'></a></td>";
+                                        echo "<td><a href='sedes.php?id=$arreglo[0]&idborrar=2'><img src='../../images/eliminar.png' class='img-rounded'/></a></td>";
                                         echo "</tr>";
 
                                     }
