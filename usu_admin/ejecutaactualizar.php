@@ -3,7 +3,7 @@
 
 extract($_POST);	//extraer todos los valores del metodo post del formulario de actualizar
 	require("../connect_db.php");
-	$sentencia="update login set user='$user', password='$pass', email='$email', pasadmin='$pasadmin', rol='$rol' where id='$id'";
+	$sentencia="update login set user='$user', password='$pass', email='$email', rol='$rol' where id='$id'";
 	//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
 	$resent=mysqli_query($mysqli,$sentencia);
 	if ($resent==null) {

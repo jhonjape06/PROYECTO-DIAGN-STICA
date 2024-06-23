@@ -59,9 +59,15 @@
                         </div>
                         <div class="form-group">
                             <label><b>INGRESE EL ROL</b></label>
-                            <input type="text" name="rol" class="form-control" required placeholder="Rol del usuario" />
+                            <select type="text" name="rol" class="form-control" required>
+                                <option value="">Seleccionar rol</option>
+                                <option value="administrador">Administrador</option>
+                                <option value="logistica">Logística</option>
+                                <option value="sede">Sedes</option>
+                                <!-- Añadir más opciones según los roles disponibles -->
+                            </select>
                         </div>
-                        <input  class="btn btn-danger" type="submit" name="submit" value="CREAR USUARIO"/>
+                        <input class="btn btn-danger" type="submit" name="submit" value="CREAR USUARIO"/>
                     </fieldset>
                 </form>
                 <!-- Fin del formulario de registro -->
