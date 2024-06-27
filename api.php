@@ -19,37 +19,39 @@ switch ($method) {
     case 'POST':
         $data = json_decode(file_get_contents('php://input'), true);
 
-        if (isset($data['user']) && isset($data['password']) && isset($data['rol'])) {
+        if (isset($data['user']) && isset($data['password']) && isset($data['email']) && isset($data['rol'])) {
             $user = $data['user'];
             $password = $data['password'];
+            $email = $data['email'];
             $rol = $data['rol'];
-            $sql = "INSERT INTO login (user, password, rol) VALUES ('$user', '$password', '$rol')";
+            $sql = "INSERT INTO login (user, password, email, rol) VALUES ('$user', '$password', '$email', '$rol')";
             if ($mysqli->query($sql) === TRUE) {
-                $response = ["message" => "User created successfully"];
+                $response = ["message" => "Usuario creado con éxito"];
             } else {
-                $response = ["error" => "Error creating user: " . $mysqli->error];
+                $response = ["error" => "Error al crear usuario: " . $mysqli->error];
             }
         } else {
-            $response = ["error" => "Invalid input data"];
+            $response = ["error" => "Datos no válidos"];
         }
         break;
 
     case 'PUT':
         $data = json_decode(file_get_contents('php://input'), true);
 
-        if (isset($data['id']) && isset($data['user']) && isset($data['password']) && isset($data['rol'])) {
+        if (isset($data['id']) && isset($data['user']) && isset($data['password']) && isset($data['email']) && isset($data['rol'])) {
             $id = $data['id'];
             $user = $data['user'];
             $password = $data['password'];
+            $email = $data['email'];
             $rol = $data['rol'];
-            $sql = "UPDATE login SET user='$user', password='$password', rol='$rol' WHERE id='$id'";
+            $sql = "UPDATE login SET user='$user', password='$password', email='$email', rol='$rol' WHERE id='$id'";
             if ($mysqli->query($sql) === TRUE) {
-                $response = ["message" => "User updated successfully"];
+                $response = ["message" => "Usuario actualizado con éxito"];
             } else {
-                $response = ["error" => "Error updating user: " . $mysqli->error];
+                $response = ["error" => "Error al actualizar usuario: " . $mysqli->error];
             }
         } else {
-            $response = ["error" => "Invalid input data"];
+            $response = ["error" => "Datos no válidos"];
         }
         break;
 
@@ -60,17 +62,17 @@ switch ($method) {
             $id = $data['id'];
             $sql = "DELETE FROM login WHERE id='$id'";
             if ($mysqli->query($sql) === TRUE) {
-                $response = ["message" => "User deleted successfully"];
+                $response = ["message" => "Usuario eliminado exitosamente"];
             } else {
-                $response = ["error" => "Error deleting user: " . $mysqli->error];
+                $response = ["error" => "Error al eliminar usuario: " . $mysqli->error];
             }
         } else {
-            $response = ["error" => "Invalid input data"];
+            $response = ["error" => "Datos no válidos"];
         }
         break;
 
     default:
-        $response = ["error" => "Invalid request method"];
+        $response = ["error" => "Solicitud no válido"];
         break;
 }
 
