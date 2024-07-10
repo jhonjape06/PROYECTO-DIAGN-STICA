@@ -58,7 +58,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 
     <div class="container">
         <div class="sidebar">
-            <form method="post" action="#">
+            <form method="post" action="asignar_productos.php">
                 <button type="submit" class="btn_ing_art">ASIGNAR PRODUCTOS</button>
             </form>
             <form method="post" action="#">
@@ -98,23 +98,19 @@ while ($row = mysqli_fetch_assoc($query)) {
                             echo "</tr>";
 
                             while ($arreglo = mysqli_fetch_array($query)) {
-
                                 echo "<tr class='success'>";
-                                echo "<td>{$arreglo[0]}</td>"; 
-                                echo "<td>{$arreglo[1]}</td>";
-                                echo "<td>{$arreglo[2]}</td>";
-                                echo "<td>{$arreglo[3]}</td>";
-                                echo "<td>{$arreglo[4]}</td>";
-                                echo "<td>{$arreglo[5]}</td>";
-                                echo "<td>{$arreglo[6]}</td>";
-                                echo "<td><input type='date' name='dias_pedido' value='{$arreglo[7]}'></td>";
-                                echo "<td>{$arreglo[8]}</td>";
-                                echo "<td><a href='actualizar_productos.php?id={$arreglo[0]}'><img src='../../images/actualizar.png' class='img-rounded'></a></td>";
-                                echo "<td><a href='index2.php?id={$arreglo[0]}&idborrar=2'><img src='../../images/eliminar.png' class='img-rounded'/></a></td>";
+                                echo "<td>{$arreglo['id']}</td>"; 
+                                echo "<td>{$arreglo['sede']}</td>";
+                                echo "<td>{$arreglo['codigo_art']}</td>";
+                                echo "<td>{$arreglo['nombre_art']}</td>";
+                                echo "<td>{$arreglo['descrip']}</td>";
+                                echo "<td>{$arreglo['cantidad']}</td>";
+                                echo "<td>{$arreglo['cantidad_stock_minimo']}</td>";
+                                echo "<td><input type='date' name='dias_pedido' value='{$arreglo['dias_pedido']}'></td>";
+                                echo "<td>{$arreglo['cantidad_nvo_ped']}</td>";
+                                echo "<td><a href='actualizar_productos.php?id={$arreglo['id']}'><img src='../../images/actualizar.png' class='img-rounded'></a></td>";
+                                echo "<td><a href='pedido_sedes.php?id={$arreglo['id']}&idborrar=2'><img src='../../images/eliminar.png' class='img-rounded'/></a></td>";
                                 echo "</tr>";
-
-                           
-                              
                             }
                             echo "</table>";
 
@@ -123,7 +119,7 @@ while ($row = mysqli_fetch_assoc($query)) {
                                 $sql_borrar = "DELETE FROM inventario_sedes WHERE id='$id_borrar'";
                                 $query_borrar = mysqli_query($mysqli, $sql_borrar);
                                 echo '<script>alert("REGISTRO ELIMINADO")</script>';
-                                echo "<script>location.href='admin_inventario.php'</script>";
+                                echo "<script>location.href='pedido_sedes.php'</script>";
                             }
                             ?>
                         </div>
