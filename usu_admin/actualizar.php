@@ -5,6 +5,19 @@ if (!$_SESSION['user']) {
     header("Location:../index.php");
     exit(); // Finaliza el script para evitar ejecución adicional
 }
+
+// Conectar a la base de datos
+require("../connect_db.php");
+
+// Obtener las sedes
+$sql_sedes = "SELECT nombre_sede FROM sedes";
+$result_sedes = $mysqli->query($sql_sedes);
+$sedes = [];
+if ($result_sedes->num_rows > 0) {
+    while ($row_sede = $result_sedes->fetch_assoc()) {
+        $sedes[] = $row_sede;
+    }
+}
 ?>		
 <html lang="en">
 <head>
@@ -24,12 +37,15 @@ if (!$_SESSION['user']) {
                         <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                     </form>
                 </li>
-                <li class="Usuario">USUARIO: <strong><?php echo $_SESSION['user']; ?></strong></li>
+                <nav>
+                    <li class="Usuario">USUARIO: <strong><?php echo htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                    <li class="rol">ROL: <strong><?php echo htmlspecialchars($_SESSION['rol'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                </nav>
             </ul>
         </nav>
-        <div class="row">	
+        <div class="row">    
             <form method="post" action="admin.php">
-                <button type="submit" class="btn_crear_usu"><= ATRAS</button>
+                <button type="submit" class="btn_atras"><= ATRAS</button>
             </form> 
             <div class="row-fluid">
                 <fieldset>
@@ -45,6 +61,7 @@ if (!$_SESSION['user']) {
                             $pass = $row[2];
                             $email = $row[3];
                             $rol = $row[4];
+                            $nombre_sede = $row[5];
                         }
                     ?>
                     <form action="ejecutaactualizar.php" method="post">
@@ -52,13 +69,13 @@ if (!$_SESSION['user']) {
                         <input type="text" name="id" value="<?php echo $id ?>" readonly="readonly"><br><br>
                         
                         USUARIO<br> 
-                        <input type="text" name="user" value="<?php echo $user ?>"><br><br>
+                        <input type="text" name="user" value="<?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?>"><br><br>
                         
                         CONTRASEÑA USUARIO<br> 
-                        <input type="text" name="pass" value="<?php echo $pass ?>"><br><br>
+                        <input type="text" name="pass" value="<?php echo htmlspecialchars($pass, ENT_QUOTES, 'UTF-8'); ?>"><br><br>
                         
                         CORREO USUARIO<br> 
-                        <input type="text" name="email" value="<?php echo $email ?>"><br><br>
+                        <input type="text" name="email" value="<?php echo htmlspecialchars($email, ENT_QUOTES, 'UTF-8'); ?>"><br><br>
                         
                         ROL DEL USUARIO<br> 
                         <select name="rol" class="form-control" required>
@@ -67,10 +84,21 @@ if (!$_SESSION['user']) {
                             <option value="sede" <?php if ($rol == 'sede') echo 'selected'; ?>>Sede</option>
                             <!-- Añadir más opciones según los roles disponibles -->
                         </select><br><br>
+
+                        SEDE<br> 
+                        <select id="nombre_sede" name="nombre_sede" class="form-control" required>
+                            <option value="">Selecciona una sede</option>
+                            <option value="NO APLICA" <?php if ($nombre_sede == 'NO APLICA') echo 'selected'; ?>>NO APLICA</option>
+                            <?php foreach ($sedes as $sede): ?>
+                                <option value="<?php echo htmlspecialchars($sede['nombre_sede'], ENT_QUOTES, 'UTF-8'); ?>" <?php if ($sede['nombre_sede'] == $nombre_sede) echo 'selected'; ?>>
+                                    <?php echo htmlspecialchars($sede['nombre_sede'], ENT_QUOTES, 'UTF-8'); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select><br><br>
                         
                         <input type="submit" value="GUARDAR" class="btn btn-success btn-primary">
                     </form>
-                </fieldset>	
+                </fieldset>    
             </div>
             <!-- Fin del cuerpo del documento -->
         </div>

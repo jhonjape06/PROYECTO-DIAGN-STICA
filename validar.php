@@ -14,6 +14,15 @@ if ($f = mysqli_fetch_assoc($sql)) {
         $_SESSION['id'] = $f['id'];
         $_SESSION['user'] = $f['user'];
         $_SESSION['rol'] = $f['rol'];
+        $_SESSION['sedes'] = $f['sedes'];
+
+        // Obtener la sede del usuario si su rol es 'sede'
+        if ($f['rol'] == 'sede') {
+            $sede_query = mysqli_query($mysqli, "SELECT sedes FROM login WHERE id='" . $f['sede_id'] . "'");
+            if ($sede_row = mysqli_fetch_assoc($sede_query)) {
+                $_SESSION['nombre_sede'] = $sede_row['nombre_sede'];
+            }
+        }
 
         // Redirigir según el rol del usuario
         switch ($f['rol']) {
@@ -25,7 +34,7 @@ if ($f = mysqli_fetch_assoc($sql)) {
                 header("Location: usu_logistica/index2.php");
                 break;
             case 'sede':
-                header("Location: usu_sede/index.php");
+                header("Location: usu_sedes/index_sedes.php");
                 break;
             // Añadir más casos según los roles que tengas en la base de datos
             default:

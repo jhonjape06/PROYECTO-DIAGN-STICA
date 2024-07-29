@@ -32,7 +32,10 @@ if (@!$_SESSION['user']) {
                            <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                        </form>
                    </li>
-                   <li class="Usuario">USUARIO: <strong><?php echo $_SESSION['user']; ?></strong></li>
+                <nav>
+                <li class="Usuario">USUARIO: <strong><?php echo htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                <li class="Usuario">ROL: <strong><?php echo htmlspecialchars($_SESSION['rol'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                </nav>
                </ul>
            </nav>
            <div class="row">	

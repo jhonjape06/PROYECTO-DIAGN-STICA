@@ -17,7 +17,7 @@ body {
 }
 
 .navbar {
-    background-color:transparent;
+    background-color: transparent;
     padding: 20px;
     margin-bottom: 10px;
     flex-direction: column;
@@ -34,49 +34,55 @@ body {
 .navbar ul li {
     margin-left: 10px;
 }
-.logo-adm{
-    position:absolute; 
-    width: 400px;
 
+.logo-adm {
+    position: absolute;
+    width: 400px;
 }
 
-.cerrar_sesion{
+.cerrar_sesion {
     background-color: #D9D9D9;
-    margin: 0px 0px 30px 90px; 
+    margin: 0px 0px 30px 90px;
     width: 180px;
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-shadow: 0 6px 10px 6px #e0e0e0;
     position: relative;
 }
+
+.rol,
 .Usuario {
+    display: right;
     color: black;
     font-size: 22px;
 }
 
 .row {
-    background-color:transparent;
+    background-color: transparent;
     margin-bottom: 20px;
 }
 
-.row-crear-usu{
-    background-color: #afdfee;   
-}
-
-.row-fluid{
+.row-crear-usu {
     background-color: #afdfee;
 }
+
+.row-fluid {
+    background-color: #afdfee;
+}
+
 .well {
     background-color: #afdfee;
     padding: 20px;
     border-radius: 20px;
 }
+
 .container_btn {
     display: flex;
 }
+
 .btn_crear_usu {
     margin: 40px 20px;
     width: 200px;
@@ -84,11 +90,12 @@ body {
     font-size: 20px;
     background-color: #D9D9D9;
     border-radius: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
     cursor: pointer;
     box-shadow: 0 6px 10px 6px #e0e0e0;
 }
+
 .btn_reportes_adm {
     margin: 40px 20px;
     width: 200px;
@@ -96,11 +103,12 @@ body {
     font-size: 20px;
     background-color: #D9D9D9;
     border-radius: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
     cursor: pointer;
-    box-shadow: 0 6px 10px 6px #e0e0e0;   
+    box-shadow: 0 6px 10px 6px #e0e0e0;
 }
+
 fieldset {
     background-color: #afdfee;
     border: 2px solid black;
@@ -108,6 +116,7 @@ fieldset {
     margin-bottom: 20px;
     border-radius: 10px;
 }
+
 legend {
     background-color: #afdfee;
     font-size: 20px;
@@ -116,6 +125,14 @@ legend {
     border: 2px solid black;
     border-radius: 5px;
 }
+
+/* Contenedor específico para la tabla de administración de inventarios */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    margin-top: 20px;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -125,7 +142,6 @@ legend {
     padding: 8px;
     border: 2px solid black;
     border-radius: 10px;
-
 }
 
 .table th {
@@ -137,6 +153,59 @@ legend {
     background-color: #f2f2f2;
 }
 
+/* Estilos para el menú responsive */
+.dropdown {
+    display: none;
+    position: relative;
+}
+
+.dropdown-btn {
+    background-color:transparent;   
+    border-color: transparent;
+}
+.dropdown-btn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    text-align: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e0e0e0;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px ;
+}
+
+.dropdown-content a {
+
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.img-menu{
+    height: 60px;
+  width: 60px;
+}
+
 /* Media queries para diseño responsive */
 @media (max-width: 768px) {
     .navbar ul {
@@ -144,16 +213,38 @@ legend {
         align-items: flex-end;
     }
 
+    .logo-adm {
+        width: 350px; 
+        left: 100px;  
+    }
     .cerrar_sesion {
         margin-top: 10px;
-        margin: 140px 0px 30px 90px;  
+        margin: 140px 0px 30px 90px;
     }
+
     .Usuario {
         margin-top: 10px;
-        margin: 0px 0px 30px 90px;
+        margin: 0px 0px 0px 90px;
     }
 
     .table th, .table td {
         font-size: 14px;
+    }
+
+    .container_btn {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+        position: absolute;
+        top: 38px ;
+       
+    }
+
+    .dropdown-btn {
+        display:flex;
+        
+
     }
 }

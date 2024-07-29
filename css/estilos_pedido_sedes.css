@@ -4,20 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #FFFACB;
-}
-
-.container {
-    display: flex;
-    background-color: #FFFACB;
-    padding: 20px;
-    margin-top: 20px;
-}
-
 /* Navbar */
 body {
     font-family: Arial, sans-serif;
@@ -31,7 +17,7 @@ body {
 
 .navbar {
     background-color:transparent;
-    padding: 40px;
+    padding: 20px;
     margin-bottom: 10px;
     flex-direction: column;
 }
@@ -57,7 +43,7 @@ body {
     background-color: #D9D9D9;
     margin: 0px 0px 30px 90px; 
     width: 180px;
-    height: 40px;
+    height: 47px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
@@ -74,12 +60,25 @@ body {
     margin-bottom: 20px;
 }
 
-.btn_sedes,
+.row-crear-usu{
+    background-color: #afdfee;   
+}
+
+.row-fluid{
+    background-color: #afdfee;
+}
+.well {
+    background-color: #afdfee;
+    padding: 20px;
+    border-radius: 20px;
+}
+.container_btn {
+    display: flex;
+}
+
 .btn_atras {
     margin: 0 20px;
-    width: 250px;
-    height: 60px;
-    padding: 10px 20px;
+    padding: 20px 80px;
     font-size: 20px;
     background-color: #D9D9D9;
     border-radius: 10px;
@@ -88,6 +87,9 @@ body {
     cursor: pointer;
     box-shadow: 0 6px 10px 6px #e0e0e0;
 }
+
+
+
 /* Sidebar */
 .sidebar {
     flex: 0 0 200px;
@@ -98,7 +100,20 @@ body {
     margin-bottom: 10px;
 }
 
-button[type="submit"] {
+select {
+    display: block;
+    margin: 0px 20px;
+    padding: 20px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;   
+}
+
+.btn_sedes {
     display: block;
     margin: 40px 20px;
     width: 250px;
@@ -113,13 +128,64 @@ button[type="submit"] {
     box-shadow: 0 6px 10px 6px #e0e0e0;
 }
 
-.btn:hover {
-    background-color: #ccc;
+.btn_asg_art {
+    display: block;
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
 }
 
-/* Main content */
-.main-content {
-    flex: 1;
+.btn_ped_sed {
+    display: block;
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
+}
+
+.btn_gen_ped {
+    display: block;
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
+}
+
+.btn_can_ped {
+    display: block;
+    margin: 40px 20px;
+    width: 250px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
 }
 
 fieldset {
@@ -137,6 +203,17 @@ legend {
     padding: 5px 10px;
     border: 2px solid black;
     border-radius: 5px;
+}
+
+/* Contenedor específico para la tabla de administración de inventarios */
+.table-container {
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    width: auto;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    margin-top: 20px;
+
 }
 
 .table {
@@ -160,11 +237,121 @@ legend {
     background-color: #f2f2f2;
 }
 
-.header, .footer {
-    text-align: center;
-    margin-bottom: 20px;
+
+/* Estilos para el menú responsive */
+.dropdown {
+    display: none;
+    position: relative;
 }
 
-.header img {
-    height: 50px;
+.dropdown-btn {
+    background-color:transparent;   
+    border-color: transparent;
+}
+.dropdown-btn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    text-align: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e0e0e0;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px ;
+}
+
+.dropdown-content a {
+
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.img-menu{
+    height: 60px;
+  width: 60px;
+}
+
+
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .logo-adm {
+        width: 350px; 
+        left: 100px;  
+    }
+    .cerrar_sesion {
+        margin-top: 10px;
+        margin: 140px 0px 30px 90px;
+    }
+
+    .Usuario {
+        margin-top: 10px;
+        margin: 0px 0px 0px 90px;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+    }
+
+    .container_btn {
+        display: none;
+    }
+    .sidebar {
+        display: none;  
+    }
+
+    .dropdown {
+        display: block;
+        position: absolute;
+        top: 20px ;
+       
+    }
+
+    .dropdown-btn {
+        display:flex;
+        
+
+    }
+    .btn_atras {
+        position: absolute;
+        padding: 10px 20px; 
+        top: 160px;
+    }
+
+    .table-container{
+        top: 0px;
+        left: 0px;  
+        position: relative;
+        margin: 10px;
+    }
+    select{
+        padding: 6px 10px;
+        position: absolute;  
+        top: 320px; 
+    }
 }

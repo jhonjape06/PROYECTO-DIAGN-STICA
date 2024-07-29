@@ -27,24 +27,35 @@
                         <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                     </form>
                 </li>
-                <li class="Usuario">USUARIO: <strong><?php echo $_SESSION['user']; ?></strong></li>
+                <nav>
+                    <li class="Usuario">USUARIO: <strong><?php echo htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                    <li class="Usuario">ROL: <strong><?php echo htmlspecialchars($_SESSION['rol'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                </nav>
             </ul>
         </nav>
         <!-- Fin Navbar -->
 
+        <!-- Menú responsive -->
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()"><img src='../../images/menu3.png' class='img-menu' ></button>
+            <div class="dropdown-content">
+                <a href="crear_proveedor.php">CREAR PROVEEDOR</a>
+            </div>
+        </div>
+
         <!-- Cuerpo del documento -->
         <div class="row">
-            <div class="container_btn">
-                <form method="post" action="../index2.php">
-                    <button type="submit" class="btn_atras"><= ATRAS</button>
-                </form> 
+            <form method="post" action="../index2.php">
+                <button type="submit" class="btn_atras"><= ATRAS</button>
+            </form> 
+            <div class="container_btn">    
                 <form method="post" action="crear_proveedor.php">
                     <button type="submit" class="btn_crear_proveedor">CREAR PROVEEDOR</button>
                 </form> 
             </div>
-            <div class="col-xs-12">
-                <div class="caption">
-                    <fieldset>
+            <div class="table-container">
+                <fieldset>
+                    <table class="table-inventario">
                     <legend  style="font-size: 18pt"><b>ADMINISTRACIÓN DE PROVEEDORES</b></legend>
                     <div class="well">
                            <div class="row">
@@ -94,9 +105,9 @@
                                </div>
                            </div>
                    </div>
-                 </fieldset>
-               </div>
-           </div>
+                   </fieldset>
+               </table>
+            </div>
        </div>
         <!-- Fin Cuerpo del documento -->
     </div>
@@ -104,6 +115,13 @@
     <footer class="footer">
         <!-- Contenido del footer si es necesario -->
     </footer>
+    <script>
+         // JavaScript menu responsivo
+         function toggleDropdown() {
+            var dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('show');
+        }
+    </script>
     <!-- JavaScript al final para mejorar la velocidad de carga -->
     <script src="../bootstrap/js/jquery-1.8.3.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>

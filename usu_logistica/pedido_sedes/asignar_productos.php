@@ -143,7 +143,10 @@ $mysqli->close();
                         <button type="submit" class="cerrar_sesion">CERRAR SESIÓN</button>
                     </form>
                 </li>
-                <li class="Usuario">USUARIO: <strong><?php echo $_SESSION['user']; ?></strong></li>
+                <nav>
+                <li class="Usuario">USUARIO: <strong><?php echo htmlspecialchars($_SESSION['user'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                <li class="Usuario">ROL: <strong><?php echo htmlspecialchars($_SESSION['rol'], ENT_QUOTES, 'UTF-8'); ?></strong></li>
+                </nav>
             </ul>
         </nav>
         <!-- Fin Navbar -->
@@ -180,7 +183,7 @@ $mysqli->close();
                             <label><b>CANTIDAD</b></label>
                             <input type="number" name="cantidad" class="form-control" required placeholder="Cantidad"/>
                         </div>
-                        <button type="button" id="agregarProducto" class="btn btn-primary">Agregar Producto</button>
+                        <button type="button" id="agregarProducto" class="btn btn-primary">AGREGAR PRODUCTO</button>
                         <br><br>
                         <table id="tablaProductos">
                             <thead>

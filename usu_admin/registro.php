@@ -5,6 +5,7 @@
 	$pass= $_POST['pass'];
 	$rpass=$_POST['rpass'];
 	$rol= $_POST['rol'];
+	$sedes= $_POST['sedes'];
 
 	require("../connect_db.php");
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
@@ -17,7 +18,7 @@
 				
 				//require("connect_db.php");
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
-				mysqli_query($mysqli,"INSERT INTO login VALUES('','$realname','$pass','$mail','$rol')");
+				mysqli_query($mysqli,"INSERT INTO login VALUES('','$realname','$pass','$mail','$rol','$sedes')");
 				//echo 'Se ha registrado con exito';
 				echo ' <script language="javascript">alert("Usuario registrado con éxito");</script> ';
 				echo "<script>location.href='admin.php'</script>";
@@ -37,8 +38,9 @@ function validarFormulario() {
     var pass = document.getElementById('pass').value.trim();
     var rpass = document.getElementById('rpass').value.trim();
     var rol = document.getElementById('rol').value.trim();
+	var sedes = document.getElementById('sedes').value.trim();
 
-    if (realname === '' || mail === '' || pass === '' || rpass === '' || rol === '') {
+    if (realname === '' || mail === '' || pass === '' || rpass === '' || rol === '' || sedes ==='') {
         alert('Por favor, complete todos los campos.');
         return false;
     }

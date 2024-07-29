@@ -52,7 +52,9 @@ body {
     box-shadow: 0 6px 10px 6px #e0e0e0;
     position: relative;
 }
+.rol,
 .Usuario {
+    display: right;
     color: black;
     font-size: 22px;
 }
@@ -123,7 +125,7 @@ input[type="submit"]:hover {
 
 
 
-.btn_crear_usu {
+.btn_atras {
     margin: 40px 20px;
     padding: 10px 20px;
     font-size: 20px;
@@ -149,12 +151,17 @@ input[type="submit"]:hover {
     }
     .Usuario {
         margin-top: 10px;
-        margin: 0px 0px 30px 90px;
+        margin: 0px 0px 0px 90px;
     }
 
     input[type="text"],
     input[type="password"],
     input[type="submit"] {
         width: 100%;
+    }
+
+    .btn_atras{
+        height: 40px;
+        width: 140px;   
     }
 }

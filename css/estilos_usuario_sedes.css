@@ -12,15 +12,29 @@ body {
 }
 
 .container {
+    display: flex;
+    background-color: #FFFACB;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Navbar */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFACB;
+}
+
+.container {
     background-color: #FFFACB;
     padding: 20px;
 }
 
 .navbar {
     background-color:transparent;
-    padding: 20px;
+    padding: 40px;
     margin-bottom: 10px;
     flex-direction: column;
+    display:flex;
 }
 
 .navbar ul {
@@ -32,6 +46,7 @@ body {
 }
 
 .navbar ul li {
+    display: right;
     margin-left: 10px;
 }
 .logo-adm{
@@ -44,7 +59,7 @@ body {
     background-color: #D9D9D9;
     margin: 0px 0px 30px 90px; 
     width: 180px;
-    height: 47px;
+    height: 40px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
@@ -52,60 +67,22 @@ body {
     box-shadow: 0 6px 10px 6px #e0e0e0;
     position: relative;
 }
+
+.sede,
+.rol,
 .Usuario {
+    display:right;
     color: black;
     font-size: 22px;
 }
-
 .row {
     background-color:transparent;
     margin-bottom: 20px;
 }
 
-.row-crear-usu{
-    background-color: #afdfee;   
-}
-
-.row-fluid{
-    background-color: #afdfee;
-}
-.well {
-    background-color: #afdfee;
-    padding: 20px;
-    border-radius: 20px;
-}
-.container_btn {
-    display: flex;
-}
-.btn_crear_sede {
-    margin: 40px 20px;
-    width: 250px;
-    height: 60px;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    cursor: pointer;
-    box-shadow: 0 6px 10px 6px #e0e0e0;   
-}
+.btn_sedes,
 .btn_atras {
-    margin: 40px 20px;
-    padding: 20px 80px; 
-    font-size: 20px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    cursor: pointer;
-    box-shadow: 0 6px 10px 6px #e0e0e0;
-}
-
-
-
-.btn_ing_art {
-    margin: 40px 20px;
+    margin: 0 20px;
     width: 250px;
     height: 60px;
     padding: 10px 20px;
@@ -117,7 +94,33 @@ body {
     cursor: pointer;
     box-shadow: 0 6px 10px 6px #e0e0e0;
 }
-.btn_ped_sed {
+
+.form-control {
+    margin: 0 20px;
+    width: 300px;
+    height: 60px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 10px 6px #e0e0e0;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 0 0 200px;
+    margin-right: 20px;
+}
+
+.sidebar form {
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    display: block;
     margin: 40px 20px;
     width: 250px;
     height: 60px;
@@ -128,34 +131,19 @@ body {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
     cursor: pointer;
-    box-shadow: 0 6px 10px 6px #e0e0e0;   
+    box-shadow: 0 6px 10px 6px #e0e0e0;
 }
-.btn_proveedores {
-    margin: 40px 20px;
-    width: 250px;
-    height: 60px;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    cursor: pointer;
-    box-shadow: 0 6px 10px 6px #e0e0e0;   
+
+.btn:hover {
+    background-color: #ccc;
 }
-.btn_gen_rep {
-    margin: 40px 20px;
-    width: 250px;
-    height: 60px;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    cursor: pointer;
-    box-shadow: 0 6px 10px 6px #e0e0e0;   
+
+/* Main content */
+.main-content {
+    flex: 1;
+    margin-top: 20px;
 }
+
 fieldset {
     background-color: #afdfee;
     border: 2px solid black;
@@ -163,6 +151,7 @@ fieldset {
     margin-bottom: 20px;
     border-radius: 10px;
 }
+
 legend {
     background-color: #afdfee;
     font-size: 20px;
@@ -171,7 +160,6 @@ legend {
     border: 2px solid black;
     border-radius: 5px;
 }
-
 /* Contenedor específico para la tabla de administración de inventarios */
 .table-container {
     width: 100%;
@@ -182,13 +170,13 @@ legend {
 .table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 .table th, .table td {
     padding: 8px;
     border: 2px solid black;
     border-radius: 10px;
-
 }
 
 .table th {
@@ -199,76 +187,21 @@ legend {
 .table tr:hover {
     background-color: #f2f2f2;
 }
-/* Estilos para estado de stock */
-.nivel-bajo {
-    background-color: #ffcccc; /* Rojo claro */
+
+.header, .footer {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.normal {
-    background-color: #ccffcc; /* Verde claro */
-}
-/* Estilos para el menú responsive */
-.dropdown {
-    display: none;
-    position: relative;
+.header img {
+    height: 50px;
 }
 
-.dropdown-btn {
-    background-color:transparent;   
-    border-color: transparent;
-}
-.dropdown-btn {
-    display: none;
-    background-color: transparent;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 50px;
-    text-align: left;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #e0e0e0;
-    min-width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 10px ;
-}
-
-.dropdown-content a {
-
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown.show .dropdown-content {
-    display: block;
-}
-
-.img-menu{
-    height: 60px;
-  width: 60px;
-}
-
-/* Media queries para diseño responsive */
+/* Media Queries */
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
         align-items: flex-end;
-    }
-    .logo-adm {
-        width: 350px; 
-        left: 100px;  
     }
 
     .cerrar_sesion {
@@ -283,25 +216,5 @@ legend {
     .table th, .table td {
         font-size: 14px;
     }
-    .container_btn {
-        display: none;
-    }
-
-    .dropdown {
-        display: block;
-        position: absolute;
-        top: 38px ;
-       
-    }
-
-    .dropdown-btn {
-        display:flex;
-        
-
-    }
-    .btn_atras {
-        position: absolute;
-        padding: 10px 20px; 
-        top: 140px;
-    }
+   
 }

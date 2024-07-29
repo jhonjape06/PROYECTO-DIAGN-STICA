@@ -44,7 +44,7 @@ body {
     background-color: #D9D9D9;
     margin: 0px 0px 30px 90px; 
     width: 180px;
-    height: 40px;
+    height: 47px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
@@ -79,8 +79,7 @@ body {
 }
 .btn_atras {
     margin: 40px 20px;
-    width: 250px;
-    padding: 10px 20px;
+    padding: 10px 80px;
     font-size: 20px;
     background-color: #D9D9D9;
     border-radius: 10px;
@@ -92,6 +91,7 @@ body {
 .btn_crear_proveedor {
     margin: 40px 20px;
     width: 250px;
+    height: 60px;
     padding: 10px 20px;
     font-size: 20px;
     background-color: #D9D9D9;
@@ -116,6 +116,14 @@ legend {
     border: 2px solid black;
     border-radius: 5px;
 }
+
+/* Contenedor específico para la tabla de administración de inventarios */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    margin-top: 20px;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -137,6 +145,59 @@ legend {
     background-color: #f2f2f2;
 }
 
+/* Estilos para el menú responsive */
+.dropdown {
+    display: none;
+    position: relative;
+}
+
+.dropdown-btn {
+    background-color:transparent;   
+    border-color: transparent;
+}
+.dropdown-btn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    text-align: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e0e0e0;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px ;
+}
+
+.dropdown-content a {
+
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+.img-menu{
+    height: 60px;
+  width: 60px;
+}
+
 /* Media queries para diseño responsive */
 @media (max-width: 768px) {
     .navbar ul {
@@ -144,16 +205,45 @@ legend {
         align-items: flex-end;
     }
 
+    .logo-adm {
+        width: 350px; 
+        left: 100px;  
+    }
+
     .cerrar_sesion {
         margin-top: 10px;
         margin: 140px 0px 30px 90px;  
     }
+
     .Usuario {
         margin-top: 10px;
-        margin: 0px 0px 30px 90px;
+        margin: 0px 0px 0px 90px;
     }
 
     .table th, .table td {
         font-size: 14px;
+    }
+
+    .container_btn {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+        position: absolute;
+        top: 38px ;
+       
+    }
+
+    .dropdown-btn {
+        display:flex;
+        
+
+    }
+
+    .btn_atras {
+        position: absolute;
+        padding: 10px 20px; 
+        top: 140px;
     }
 }
